@@ -9,6 +9,7 @@ export default class Autocomplete {
   container: AutocompleteElement
   input: HTMLInputElement
   results: HTMLElement
+  allowBlank: boolean
 
   onInputChange: () => void
   onResultsMouseDown: () => void
@@ -29,7 +30,7 @@ export default class Autocomplete {
     this.input.setAttribute('spellcheck', 'false')
 
     this.interactingWithList = false
-    this.allowBlank = this.input.getAttribute('allow-blank')
+    this.allowBlank = this.input.hasAttribute('allow-blank')
 
     this.onInputChange = debounce(this.onInputChange.bind(this), 300)
     this.onResultsMouseDown = this.onResultsMouseDown.bind(this)
