@@ -1,8 +1,8 @@
 {
-  "name": "@github/auto-complete-element",
-  "version": "1.0.11",
+  "name": "@scottjg/auto-complete-element",
+  "version": "1.0.12",
   "description": "Auto-complete input values from server results",
-  "repository": "github/auto-complete-element",
+  "repository": "scottjg/auto-complete-element",
   "main": "dist/index.umd.js",
   "module": "dist/index.esm.js",
   "types": "index.d.ts",
@@ -14,7 +14,7 @@
     "pretest": "npm run build",
     "test": "karma start test/karma.config.js",
     "prepublishOnly": "npm run build",
-    "postpublish": "npm publish --ignore-scripts --@github:registry='https://npm.pkg.github.com'"
+    "postpublish": "npm publish --ignore-scripts --@scottjg:registry='https://npm.pkg.github.com'"
   },
   "keywords": [
     "auto-complete"
