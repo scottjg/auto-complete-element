@@ -29,6 +29,7 @@ export default class Autocomplete {
     this.input.setAttribute('spellcheck', 'false')
 
     this.interactingWithList = false
+    this.allowBlank = this.input.getAttribute('allow-blank')
 
     this.onInputChange = debounce(this.onInputChange.bind(this), 300)
     this.onResultsMouseDown = this.onResultsMouseDown.bind(this)
@@ -101,7 +102,7 @@ export default class Autocomplete {
 
   fetchResults() {
     const query = this.input.value.trim()
-    if (!query) {
+    if (!query && !this.allowBlank) {
       this.container.open = false
       return
     }
