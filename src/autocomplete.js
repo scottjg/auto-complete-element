@@ -10,6 +10,7 @@ export default class Autocomplete {
   input: HTMLInputElement
   results: HTMLElement
   allowBlank: boolean
+  stayExpanded: boolean
 
   onInputChange: () => void
   onResultsMouseDown: () => void
@@ -31,6 +32,7 @@ export default class Autocomplete {
 
     this.interactingWithList = false
     this.allowBlank = this.input.hasAttribute('allow-blank')
+    this.stayExpanded = this.input.hasAttribute('stay-expanded')
 
     this.onInputChange = debounce(this.onInputChange.bind(this), 300)
     this.onResultsMouseDown = this.onResultsMouseDown.bind(this)
@@ -73,7 +75,7 @@ export default class Autocomplete {
       this.interactingWithList = false
       return
     }
-    this.container.open = false
+    if (!this.stayExpanded) this.container.open = false
   }
 
   onCommit({target}: Event) {

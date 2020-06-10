@@ -1,6 +1,6 @@
 {
   "name": "@scottjg/auto-complete-element",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Auto-complete input values from server results",
   "repository": "scottjg/auto-complete-element",
   "main": "dist/index.umd.js",
@@ -14,7 +14,7 @@
     "pretest": "npm run build",
     "test": "karma start test/karma.config.js",
     "prepublishOnly": "npm run build",
-    "postpublish": "npm publish --ignore-scripts --@scottjg:registry='https://npm.pkg.github.com'"
+    "postpublish": "npm publish --ignore-scripts"
   },
   "keywords": [
     "auto-complete"
